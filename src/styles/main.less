@@ -1,0 +1,136 @@
+@import "variaveis.less";
+@import "mapas.less";
+
+
+@breakpointMobile: ~"(max-width: 767px)";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
+
+body{
+    background-color: #colors[backgroundColor];
+    color: #colors[textColor];
+}                
+
+.container{
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media @breakpointTablet {
+        max-width: 80%;
+    }
+
+    @media @breakpointMobile {
+        max-width: 70%;
+    }
+
+}
+
+header {
+    background-color: #colors [backgroundHeader];
+    padding: 10px 0;
+    border-radius: 10px;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+    }
+
+    .branding img {
+        max-height: 90px;
+    }
+
+    nav ul.menu {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+
+        li a {
+            text-align: center;
+            color: #colors [textColorHeader];
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+           
+
+            &:hover {
+                color:#ff9ff3; 
+            }
+        }
+    }
+}
+
+
+section {
+    padding: 40px 0;
+
+    .container {
+        height: auto; 
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #222;
+    }
+}
+
+ul.products {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+
+    @media @breakpointMobile {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.product-item {
+    background: white;
+    border-radius: 6px;
+    padding: 15px;
+    width: 180px;
+    text-align: center;
+
+    img {
+        max-width: 100%;
+        border-radius: 4px;
+        margin-bottom: 12px;
+    }
+
+    h4 {
+        margin-bottom: 8px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #222;
+    }
+
+    p {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        color: #555;
+    }
+
+    a.product-button {
+        background-color: @CordosBotoes;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #colors[buttomDegrade];
+        }
+    }
+}
